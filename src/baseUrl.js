@@ -1,1 +1,2 @@
-export const baseUrl = "https://dummyjson.com/posts?limit=5&skip=0"
+const baseUrl = "https://dummyjson.com";
+export default baseUrl;
