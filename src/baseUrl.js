@@ -1,0 +1,1 @@
+export const baseUrl = "https://dummyjson.com/posts?limit=5&skip=0"
