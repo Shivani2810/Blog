@@ -27,9 +27,13 @@ const Blogs = () => {
               >
 
                 {/* Title */}
-                <h2 className="text-2xl font-bold text-gray-800 mb-3 hover:text-green-800 cursor-pointer transition">
-                  {post.title}...
-                </h2>
+                import { Link } from "react-router-dom";
+
+<Link to={`/post/${post.id}`}>
+  <h2 className="text-2xl font-bold hover:text-blue-600">
+    {post.title}
+  </h2>
+</Link>
 
                 {/* Body */}
                 <p className="text-black-600 mb-4 leading-tight">
@@ -39,12 +43,11 @@ const Blogs = () => {
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-4 ">
                   {post.tags.map((tag, index) => (
-                    <span
-                      key={index}
-                      className="bg-blue-50 text-blue-600 text-sm font-medium px-3 py-1 rounded-full"
-                    >
-                      #{tag}
-                    </span>
+                    <Link to={`/tag/${tag}`} key={index}>
+  <span className="bg-blue-100 px-3 py-1 rounded-full">
+    #{tag}
+  </span>
+</Link>
                   ))}
                 </div>
 

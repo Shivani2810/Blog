@@ -15,6 +15,12 @@ export default function App() {
       <Pagination></Pagination>
      </div>
 
+     <Routes>
+      <Route path="/post/:id" element={<PostDetails />} />
+      <Route path="/tag/:tag" element={<TagPage />} />
+
+     </Routes>
+
   </div>
   
 )
