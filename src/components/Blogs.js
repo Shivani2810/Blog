@@ -23,21 +23,21 @@ const Blogs = () => {
             {posts.map((post) => (
               <div 
                 key={post.id} 
-                className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 border border-gray-100"
+                className="bg-green-100 p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 border border-green-800"
               >
 
                 {/* Title */}
-                <h2 className="text-2xl font-bold text-gray-800 mb-3 hover:text-blue-600 cursor-pointer transition">
-                  {post.title}
+                <h2 className="text-2xl font-bold text-gray-800 mb-3 hover:text-green-800 cursor-pointer transition">
+                  {post.title}...
                 </h2>
 
                 {/* Body */}
-                <p className="text-gray-600 mb-4 leading-relaxed">
+                <p className="text-black-600 mb-4 leading-tight">
                   {post.body}
                 </p>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-4 ">
                   {post.tags.map((tag, index) => (
                     <span
                       key={index}
@@ -51,8 +51,8 @@ const Blogs = () => {
                 {/* Stats */}
                 <div className="flex items-center justify-between text-sm text-gray-500 border-t pt-3">
                   <div className="flex gap-4">
-                    <span>👍 {post.reactions.likes}</span>
-                    <span>👎 {post.reactions.dislikes}</span>
+                    <span className="text-red-800">👍 {post.reactions.likes}</span>
+                    <span className="text-red-800">👎 {post.reactions.dislikes}</span>
                   </div>
                   <span>👁 {post.views} views</span>
                 </div>

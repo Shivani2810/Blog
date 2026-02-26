@@ -9,7 +9,7 @@ import React from "react"
 export default function App() {
   return (<div>
     
-     <div>
+     <div className="bg-blue-100">
       <Header></Header>
       <Blogs></Blogs>
       <Pagination></Pagination>
