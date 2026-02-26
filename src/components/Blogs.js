@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { AppContext } from "../context/AppContext";
 import Spinner from "./Spinner";
+import { Link } from "react-router-dom";
 
 const Blogs = () => {
 
@@ -27,7 +28,7 @@ const Blogs = () => {
               >
 
                 {/* Title */}
-                import { Link } from "react-router-dom";
+                
 
 <Link to={`/post/${post.id}`}>
   <h2 className="text-2xl font-bold hover:text-blue-600">
