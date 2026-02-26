@@ -1,54 +1,65 @@
 import React, { useContext } from "react";
 import { AppContext } from "../context/AppContext";
-import Spinner from "./Spinner"; // if you have one
-import { useEffect } from "react";
+import Spinner from "./Spinner";
 
 const Blogs = () => {
 
   const { loading, posts } = useContext(AppContext);
 
-  console.log("posts:", posts);
-console.log("loading:", loading);
-
   return (
-    <div className="max-w-2xl mx-auto p-4">
+    <div className="max-w-3xl mx-auto px-4 py-10">
 
       {
         loading ? (
-          <Spinner />
+          <div className="flex justify-center items-center h-60">
+            <Spinner />
+          </div>
         ) : posts.length === 0 ? (
-          <div className="text-center text-xl font-semibold">
+          <div className="text-center text-2xl font-semibold text-gray-600">
             No Posts Found
           </div>
         ) : (
-          posts.map((post) => (
-            <div key={post.id} className="border-b py-6">
+          <div className="space-y-8">
+            {posts.map((post) => (
+              <div 
+                key={post.id} 
+                className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 border border-gray-100"
+              >
 
-              <h2 className="text-2xl font-bold mb-2">
-                {post.title}...
-              </h2>
+                {/* Title */}
+                <h2 className="text-2xl font-bold text-gray-800 mb-3 hover:text-blue-600 cursor-pointer transition">
+                  {post.title}
+                </h2>
 
-              <p className="text-gray-600 mb-3">
-                {post.body}
-              </p>
+                {/* Body */}
+                <p className="text-gray-600 mb-4 leading-relaxed">
+                  {post.body}
+                </p>
 
-              <div className="flex gap-2 flex-wrap mb-2">
-                {post.tags.map((tag, index) => (
-                  <span 
-                    key={index}
-                    className="bg-gray-200 text-sm px-2 py-1 rounded"
-                  >
-                    #{tag}
-                  </span>
-                ))}
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {post.tags.map((tag, index) => (
+                    <span
+                      key={index}
+                      className="bg-blue-50 text-blue-600 text-sm font-medium px-3 py-1 rounded-full"
+                    >
+                      #{tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Stats */}
+                <div className="flex items-center justify-between text-sm text-gray-500 border-t pt-3">
+                  <div className="flex gap-4">
+                    <span>👍 {post.reactions.likes}</span>
+                    <span>👎 {post.reactions.dislikes}</span>
+                  </div>
+                  <span>👁 {post.views} views</span>
+                </div>
+
               </div>
-
-              <div className="text-sm text-gray-500">
-                👍 {post.reactions.likes} | 👎 {post.reactions.dislikes} | 👁 {post.views}
-              </div>
-
-            </div>
-          ))
+            ))}
+          </div>
         )
       }
 
@@ -56,4 +67,4 @@ console.log("loading:", loading);
   );
 };
 
-export default Blogs;  
+export default Blogs;
