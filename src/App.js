@@ -18,6 +18,7 @@ export default function App() {
      <Routes>
       <Route path="/post/:id" element={<PostDetails />} />
       <Route path="/tag/:tag" element={<TagPage />} />
+      <Route path="/search/:query" element={<SearchPage />} />
 
      </Routes>
 
