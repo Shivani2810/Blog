@@ -23,7 +23,7 @@ const Blogs = () => {
             {posts.map((post) => (
               <div 
                 key={post.id} 
-                className="bg-green-100 p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 border border-green-800"
+                className="bg-green-100 p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300 border border-green-800 hover:-translate-y-1 transform"
               >
 
                 {/* Title */}
