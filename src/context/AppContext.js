@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
 import baseUrl from "../baseUrl";
+import { useEffect } from "react";
 
 export const AppContext = createContext();
 
@@ -35,6 +36,10 @@ function AppContextProvider({ children }) {
 
     setLoading(false);
   }
+  useEffect(() => {
+    fetchBlogData(1);
+  }, []);
+
 
   function handlePageChange(page)
   {
