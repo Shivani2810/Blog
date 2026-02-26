@@ -9,7 +9,7 @@ import React from "react"
 export default function App() {
   return (<div>
     
-     <div className="bg-blue-100">
+     <div className="bg-blue-100 flex flex-col h-screen">
       <Header></Header>
       <Blogs></Blogs>
       <Pagination></Pagination>

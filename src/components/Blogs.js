@@ -7,7 +7,7 @@ const Blogs = () => {
   const { loading, posts } = useContext(AppContext);
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-10">
+    <div className="max-w-5xl mx-auto px-4 py-10 flex-1 overflow-y-auto px-4">
 
       {
         loading ? (
